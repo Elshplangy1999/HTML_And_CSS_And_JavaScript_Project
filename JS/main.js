@@ -289,7 +289,7 @@ let randomNumber;
 function randomizeBackground() {
   backgroundInterval = setInterval(() => {
     randomNumber = Math.trunc(Math.random() * 5) + 1;
-    landingPage.style.backgroundImage = `url('/Images/${randomNumber}.jpg')`;
+    landingPage.style.backgroundImage = `url('./Images/${randomNumber}.jpg')`;
   }, 3000);
 }
 
