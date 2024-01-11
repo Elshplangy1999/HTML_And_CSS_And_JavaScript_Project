@@ -147,27 +147,27 @@ body {
 }
 
 .landing-page .settings-box .option-box .background-list li:first-child {
-  background-image: url(./Images/1.jpg);
+  background-image: url(../Images/1.jpg);
   background-size: cover;
 }
 
 .landing-page .settings-box .option-box .background-list li:nth-child(2) {
-  background-image: url(./Images/2.jpg);
+  background-image: url(../Images/2.jpg);
   background-size: cover;
 }
 
 .landing-page .settings-box .option-box .background-list li:nth-child(3) {
-  background-image: url(./Images/3.jpg);
+  background-image: url(../Images/3.jpg);
   background-size: cover;
 }
 
 .landing-page .settings-box .option-box .background-list li:nth-child(4) {
-  background-image: url(./Images/4.jpg);
+  background-image: url(../Images/4.jpg);
   background-size: cover;
 }
 
 .landing-page .settings-box .option-box .background-list li:nth-child(5){
-  background-image: url(./Images/5.jpg);
+  background-image: url(../Images/5.jpg);
   background-size: cover;
 }
 
