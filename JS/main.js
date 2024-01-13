@@ -2,6 +2,8 @@ let landingPage = document.querySelector(".landing-page");
 
 let allHeaderLinks = document.querySelectorAll("header .links li a");
 
+let toggleBtn = document.querySelector(".toggle-menu");
+
 // Start typed js for span element
 
 var typed = new Typed(".element", {
@@ -36,6 +38,21 @@ let header = document.querySelector("header");
 
 let headroom = new Headroom(header);
 
+let toggleMenuSpans = document.querySelectorAll(".toggle-menu span");
+
+function toggleMenuHover(toggleBtn, toggleMenuSpans, overColor, outColor) {
+  toggleBtn.addEventListener(("mouseover"), () => {
+    toggleMenuSpans.forEach((toggleMenuSpan) => {
+      toggleMenuSpan.style.backgroundColor = overColor;
+    })
+  });
+  toggleBtn.addEventListener(("mouseout"), () => {
+    toggleMenuSpans.forEach((toggleMenuSpan) => {
+      toggleMenuSpan.style.backgroundColor = outColor;
+    })
+  });
+}
+
 function allLinksHover(headerLinks, overColor, outColor) {
   headerLinks.forEach((headerLink) => {
     headerLink.addEventListener("mouseover", (e) => {
@@ -59,10 +76,12 @@ function navScrolling() {
         window.localStorage.getItem("mainColor"),
         "white"
       );
+      toggleMenuHover(toggleBtn, toggleMenuSpans, window.localStorage.getItem("mainColor"), "white");
     } else {
       header.style.backgroundColor = window.localStorage.getItem("mainColor");
       header.style.boxShadow = "0 1px 20px #36363638";
       allLinksHover(allHeaderLinks, "black", "white");
+      toggleMenuHover(toggleBtn, toggleMenuSpans, "black", "white");
     }
   });
 }
@@ -108,8 +127,6 @@ navBtns.forEach((navBtn) => {
 // Start Nav Scrolling
 
 //Start Toggle menu
-
-let toggleBtn = document.querySelector(".toggle-menu");
 
 let toggleMenu = document.querySelector(".links");
 
