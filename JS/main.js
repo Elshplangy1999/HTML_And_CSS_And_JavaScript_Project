@@ -4,6 +4,8 @@ let allHeaderLinks = document.querySelectorAll("header .links li a");
 
 let toggleBtn = document.querySelector(".toggle-menu");
 
+let toggleMenu = document.querySelector(".links");
+
 // Start typed js for span element
 
 var typed = new Typed(".element", {
@@ -71,11 +73,7 @@ function navScrolling() {
     if (window.scrollY <= 622.5000122070312) {
       header.style.backgroundColor = "transparent";
       header.style.boxShadow = "none";
-      allLinksHover(
-        allHeaderLinks,
-        window.localStorage.getItem("mainColor"),
-        "white"
-      );
+      allLinksHover(allHeaderLinks, window.localStorage.getItem("mainColor"), "white");
       toggleMenuHover(toggleBtn, toggleMenuSpans, window.localStorage.getItem("mainColor"), "white");
     } else {
       header.style.backgroundColor = window.localStorage.getItem("mainColor");
@@ -128,11 +126,20 @@ navBtns.forEach((navBtn) => {
 
 //Start Toggle menu
 
-let toggleMenu = document.querySelector(".links");
+
 
 toggleBtn.addEventListener("click", (e) => {
+
   e.stopPropagation();
+
   toggleMenu.classList.toggle("active");
+
+  toggleBtn.classList.toggle("menu-active");
+
+  if (toggleMenu.classList.contains("active")) {
+    allLinksHover(allHeaderLinks, "black", window.localStorage.getItem("mainColor"));
+  }
+
   let toggleSettings = document.querySelector(".toggle-settings");
 
   toggleSettings.classList.toggle("show");
