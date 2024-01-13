@@ -26,7 +26,7 @@ body {
 
 .landing-page {
   min-height: 100vh;
-  background-image: url(./Images/1.jpg);
+  background-image: url(../Images/1.jpg);
   background-size: cover;
   position: relative;
 }
@@ -407,6 +407,7 @@ body {
   background-color: transparent;
   cursor: pointer;
   display: none;
+  position: relative;
 }
 
 .landing-page header .toggle-menu:hover span {
@@ -442,11 +443,11 @@ body {
     padding: 0;
   }
 
-  .landing-page header .links-opened::after {
+  .landing-page header .toggle-menu.menu-active::after {
     content: "";
     position: absolute;
-    right: 0px;
-    top: -25px;
+    left: 3px;
+    top: 41px;
     border-width: 15px;
     border-color: transparent transparent white transparent;
     border-style: solid;
@@ -681,13 +682,19 @@ h2 {
 
 @media (max-width: 575px) {
   .gallery-popup {
-    width: 65%;
+    width: 75%;
   }
 }
 
-@media ((min-width: 575px) and (max-width: 767px)) {
+@media ((min-width: 576px) and (max-width: 767px)) {
   .gallery-popup {
-    width: 75%;
+    width: 85%;
+  }
+}
+
+@media ((min-width: 768px) and (max-width: 991px)) {
+  .gallery-popup {
+    width: 95%;
   }
 }
 
@@ -1020,7 +1027,7 @@ h2 {
 .contact-us {
   min-height: 600px;
   padding: 80px 0 60px;
-  background-image: url(./Images/Contact\ us.png);
+  background-image: url(../Images/Contactus.png);
   background-size: cover;
   position: relative;
 }
