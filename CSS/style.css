@@ -354,7 +354,7 @@ body {
   display: flex;
   position: fixed;
   top: 0;
-  background-color: var(--main-color);
+  background-color: #000000de;
   z-index: 5999;
   max-width: 100%;
   box-shadow: 0 1px 20px #36363638;
@@ -412,6 +412,7 @@ body {
 
 .landing-page header .toggle-menu:hover span {
   background-color: var(--main-color);
+  transition: 0.3s;
 }
 
 .landing-page header .toggle-menu span {
@@ -430,7 +431,7 @@ body {
     position: absolute;
     right: 0px;
     top: 70px;
-    background-color: white;
+    background-color: #000000de;
     text-align: left;
     width: 100%;
     z-index: 5000;
@@ -443,11 +444,11 @@ body {
     padding: 0;
   }
 
-  .landing-page header .toggle-menu.menu-active::after {
+  .landing-page header .links-opened::after {
     content: "";
     position: absolute;
-    left: 3px;
-    top: 41px;
+    right: 17px;
+    top: -29px;
     border-width: 15px;
     border-color: transparent transparent white transparent;
     border-style: solid;
@@ -458,7 +459,7 @@ body {
   }
 
   .landing-page header .links-opened li a {
-    color: var(--main-color);
+    color: white;
     font-weight: bold;
     display: block;
     padding: 10px 0 10px 10px;
@@ -471,6 +472,12 @@ body {
 
   .landing-page header .toggle-menu {
     display: block;
+  }
+}
+
+@media (max-width: 575px) {
+  .landing-page header .links-opened::after {
+    right: 14px;
   }
 }
 
