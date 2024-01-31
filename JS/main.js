@@ -42,30 +42,6 @@ let headroom = new Headroom(header);
 
 let toggleMenuSpans = document.querySelectorAll(".toggle-menu span");
 
-function toggleMenuHover(toggleBtn, toggleMenuSpans, overColor, outColor) {
-  toggleBtn.addEventListener(("mouseover"), () => {
-    toggleMenuSpans.forEach((toggleMenuSpan) => {
-      toggleMenuSpan.style.backgroundColor = overColor;
-    })
-  });
-  toggleBtn.addEventListener(("mouseout"), () => {
-    toggleMenuSpans.forEach((toggleMenuSpan) => {
-      toggleMenuSpan.style.backgroundColor = outColor;
-    })
-  });
-}
-
-function allLinksHover(headerLinks, overColor, outColor) {
-  headerLinks.forEach((headerLink) => {
-    headerLink.addEventListener("mouseover", (e) => {
-      e.target.style.color = overColor;
-    });
-    headerLink.addEventListener("mouseout", (e) => {
-      e.target.style.color = outColor;
-    });
-  });
-}
-
 function navScrolling() {
   headroom.init();
   headroom.unfreeze();
@@ -73,13 +49,9 @@ function navScrolling() {
     if (window.scrollY <= 622.5000122070312) {
       header.style.backgroundColor = "transparent";
       header.style.boxShadow = "none";
-      allLinksHover(allHeaderLinks, window.localStorage.getItem("mainColor"), "white");
-      toggleMenuHover(toggleBtn, toggleMenuSpans, window.localStorage.getItem("mainColor"), "white");
     } else {
-      header.style.backgroundColor = window.localStorage.getItem("mainColor");
       header.style.boxShadow = "0 1px 20px #36363638";
-      allLinksHover(allHeaderLinks, "black", "white");
-      toggleMenuHover(toggleBtn, toggleMenuSpans, "black", "white");
+      header.style.backgroundColor = "#000000de";
     }
   });
 }
@@ -137,18 +109,12 @@ toggleBtn.addEventListener("click", (e) => {
   toggleBtn.classList.toggle("menu-active");
 
   if (toggleMenu.classList.contains("active")) {
-    allLinksHover(allHeaderLinks, "black", window.localStorage.getItem("mainColor"));
+    toggleBtn.classList.add("menu-active");
   }
 
   let toggleSettings = document.querySelector(".toggle-settings");
 
   toggleSettings.classList.toggle("show");
-
-  // if (toggleMenu.classList.contains("active")) {
-  //   toggleSettings.style.display = "none";
-  // } else {
-  //   toggleSettings.style.display = "block";
-  // }
 });
 
 toggleMenu.addEventListener("click", (e) => {
